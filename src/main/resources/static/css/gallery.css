@@ -1,0 +1,80 @@
+body {
+  padding: 40px;
+  background-image: linear-gradient(#e8f0ff 0%, white 52.08%);
+  color: #0e3481;
+  min-height: 100vh;
+}
+
+.header .lead {
+  max-width: 620px;
+}
+
+//
+.lightGallery-captions {
+  h4 {
+    transform: translate3d(60px, 0, 0px);
+  }
+  p {
+    transform: translate3d(-60px, 0, 0px);
+  }
+  h4,
+  p {
+    opacity: 0;
+  }
+}
+.lg-current {
+  .lightGallery-captions {
+    h4,
+    p {
+      transform: translate3d(0, 0, 0px);
+    }
+    h4,
+    p {
+      opacity: 1;
+    }
+  }
+}
+.lg-slide-progress {
+  .lightGallery-captions {
+    h4 {
+      transform: translate3d(-60px, 0, 0px);
+    }
+    p {
+      transform: translate3d(60px, 0, 0px);
+    }
+    h4,
+    p {
+      opacity: 0;
+    }
+  }
+}
+
+.lightGallery-captions {
+  h4,
+  p {
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in;
+  }
+}
+.lg-current {
+  .lightGallery-captions {
+    h4,
+    p {
+      transition-delay: 500ms;
+    }
+  }
+  &.lg-slide-progress {
+    .lightGallery-captions {
+      h4,
+      p {
+        transition-delay: 0ms;
+      }
+    }
+  }
+}
+
+/** Below CSS is completely optional **/
+
+.gallery-item {
+  width: 200px;
+  padding: 5px;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/admin}" method="post" enctype="multipart/form-data" th:object="${Object}"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="text">Text</label>
+            <input type="text" class="form-control" id="text" name="firstName" placeholder="Optional" th:field="*{text}">
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="photos">Image(s) <span class="text-muted">(Obligatory)</span></label>
+        <input type="file" class="form-control-file" id="photos" th:field="*{photos}" name="photo" multiple >
+    </div>
+    <hr class="mb-4">
+    <button class="btn btn-primary btn-lg btn-block" type="submit">Create</button>
+</form>
+<form action="#" th:action="@{/delete} " th:object="${Object}" method="get">
+    <input  type= "text" name="id"  >
+    <button type="submit">Delete</button>
+</form>
+
+
+</body>
+</html>
