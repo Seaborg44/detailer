@@ -75,6 +75,6 @@ body {
 /** Below CSS is completely optional **/
 
 .gallery-item {
-  width: 200px;
+  width: 100px;
   padding: 5px;
 }

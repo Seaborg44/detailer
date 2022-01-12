@@ -1,0 +1,37 @@
+
+.blog-listing {height: 500px;}
+.content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  border: solid;
+  border-width: 1px 0;
+  width: 800px;
+  border: 1px solid #1C6EA4;
+  border-right: solid black;
+  border-left: solid black;
+  column-rule-style: outset;
+  color: black;
+  }
+.content-table thead tr{
+color: black;
+text-align: center;
+font-weight: bold;
+font-size: 1.5em;
+border: solid;
+  border-width: 1px 0;
+border-right: solid black;
+  border-left: solid black;
+  column-rule-style: outset;
+   color: black;
+}
+.content-table th,
+.content-table td {
+ padding: 12px 15px;
+font-weight: normal;
+ border: solid;
+   border-width: 1px 0;
+   border-right: solid black;
+     border-left: solid black;
+     column-rule-style: outset;
+     color: black;
+}

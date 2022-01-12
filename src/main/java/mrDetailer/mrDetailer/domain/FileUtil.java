@@ -31,15 +31,19 @@ public class FileUtil {
             throw new IOException("Could not save image file: " + multipartFile.getOriginalFilename(), ioe);
         }
     }
-//    public void deleteFiles(long id) throws IOException {
-//
-//        List<String> fetchedStringList = myObjectService.fetchStringOfPhotoNames(id);
-//        for (int i = 0; i < fetchedStringList.size(); i++) {
-//            Path deletePath = Paths.get("src/main/resources/static/img/"
-//                    + fetchedStringList.get(i));
-//            Files.delete(deletePath);
-//        }
-//    }
+    public void deleteFiles(Long id) throws IOException {
+
+        List<String> fetchedStringList = myObjectService.fetchListOfFileNames(id);
+        for (int i = 0; i < fetchedStringList.size(); i++) {
+            try {
+                Path deletePath = Paths.get("src/main/resources/static/img/"
+                        + fetchedStringList.get(i));
+                Files.delete(deletePath);
+            } catch (IOException e) {
+                continue;
+            }
+        }
+    }
 
 }
 

@@ -3,15 +3,18 @@ package mrDetailer.mrDetailer.domain;
 import javax.persistence.*;
 
 @Entity
+@NamedQuery(
+        name = "FileNames.fetchFileNames",
+        query = "SELECT fileName FROM FileNames WHERE MYOBJECT_ID= :id"
+)
 public class FileNames {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String fileName;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "MYOBJECT_ID")
-    private MyObject myObject;
+    private MyObject myObject ;
 
     public FileNames() {
     }
@@ -19,7 +22,6 @@ public class FileNames {
     public FileNames(long id, String fileName) {
         this.id = id;
         this.fileName = fileName;
-        this.myObject = new MyObject();
     }
 
     public long getId() {
@@ -37,4 +39,14 @@ public class FileNames {
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }
+
+    public MyObject getMyObject() {
+        return myObject;
+    }
+
+    public void setMyObject(MyObject myObject) {
+        this.myObject = myObject;
+    }
+
+
 }
