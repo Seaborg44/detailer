@@ -8,6 +8,7 @@ import javax.persistence.*;
         query = "SELECT fileName FROM FileNames WHERE MYOBJECT_ID= :id"
 )
 public class FileNames {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;

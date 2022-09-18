@@ -14,9 +14,11 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MyObjectDto {
+
     private Long id;
     private String text;
     private List<MultipartFile> photos;
     @DateTimeFormat(pattern = "dd-MM-yyyy")
     private LocalDate localDate = LocalDate.now();
+
 }

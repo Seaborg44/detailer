@@ -23,7 +23,7 @@ public class FileUtil {
         Path uploadPath = Paths.get(uploadDir);
         if (!Files.exists(uploadPath)) {
             Files.createDirectories(uploadPath);
-        }
+            }
         try (InputStream inputStream = multipartFile.getInputStream()) {
             Path filePath = uploadPath.resolve(multipartFile.getOriginalFilename());
             Files.copy(inputStream, filePath, StandardCopyOption.REPLACE_EXISTING);
@@ -31,8 +31,8 @@ public class FileUtil {
             throw new IOException("Could not save image file: " + multipartFile.getOriginalFilename(), ioe);
         }
     }
-    public void deleteFiles(Long id) throws IOException {
 
+    public void deleteFiles(Long id) throws IOException {
         List<String> fetchedStringList = myObjectService.fetchListOfFileNames(id);
         for (int i = 0; i < fetchedStringList.size(); i++) {
             try {
@@ -43,6 +43,10 @@ public class FileUtil {
                 continue;
             }
         }
+    }
+
+    public String emptyMethod() {
+        return "sada";
     }
 
 }

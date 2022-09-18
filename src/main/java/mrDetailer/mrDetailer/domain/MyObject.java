@@ -17,6 +17,7 @@ import java.util.List;
         query = "SELECT max(id) FROM MyObject"
 )
 public class MyObject {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

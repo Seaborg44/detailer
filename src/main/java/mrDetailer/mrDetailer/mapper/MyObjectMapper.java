@@ -17,11 +17,12 @@ import java.util.List;
 
 @Component
 public class MyObjectMapper {
+
     @Autowired
     MyObjectService myObjectService;
     public static String extension="";
 
-    public MyObject mapToMyObject (MyObjectDto myObjectDto) throws IOException {
+    public MyObject mapToMyObject(MyObjectDto myObjectDto) throws IOException {
         List<FileNames> fileNamesList = new ArrayList<>();
         MyObject myObject = new MyObject(myObjectDto.getId(), myObjectDto.getText(),
                 fileNamesList, myObjectDto.getLocalDate());
@@ -35,8 +36,7 @@ public class MyObjectMapper {
         return myObject;
     }
 
-    public MyObjectDto mapToMyObjectDto (MyObject myObject) throws IOException {
-
+    public MyObjectDto mapToMyObjectDto(MyObject myObject) throws IOException {
         List<MultipartFile> multipartFileList = new ArrayList<>();
         File file = null;
 
@@ -60,7 +60,7 @@ public class MyObjectMapper {
         return new MyObjectDto(myObject.getId(),myObject.getText(), multipartFileList, myObject.getLocalDate());
     }
 
-    private static MultipartFile fromFileToMultipartFile (File file) throws IOException {
+    private static MultipartFile fromFileToMultipartFile(File file) throws IOException {
         InputStream stream =  new FileInputStream(file);
         MultipartFile multipartFileToSend = new MockMultipartFile("file", file.getName(), MediaType.TEXT_HTML_VALUE, stream);
 

@@ -46,6 +46,7 @@ public class PageController {
             String uploadDir = "src/main/resources/static/img";
             FileUtil.saveFile(uploadDir, myObjectDto.getPhotos().get(i));
         }
+
         myObjectService.addMyObject(myObjectMapper.mapToMyObject(myObjectDto));
         templateService.addImagesToMainPageTemplate(myObjectMapper.mapToMyObject(myObjectDto));
         templateService.addImagesToGalleryTemplate(myObjectMapper.mapToMyObject(myObjectDto));
